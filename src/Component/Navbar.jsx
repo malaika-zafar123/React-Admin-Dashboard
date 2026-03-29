@@ -11,7 +11,7 @@ const { darkMode, setDarkMode } = useContext(ThemeContext);
 
   return (
     <div className={darkMode ? "dark" : ""}>
-      <nav className="bg-white dark:bg-gray-800 px-4 py-3 shadow-md">
+      <nav className="bg-white dark:bg-gray-900 px-4 py-3 shadow-md">
         <div className="container mx-auto flex justify-between items-center">
 
           {/* Search Bar */}
@@ -33,7 +33,7 @@ const { darkMode, setDarkMode } = useContext(ThemeContext);
               type="text"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2"
+              className="bg-gray-100 dark:bg-gray-700 outline-none  text-gray-900 dark:text-white sm:text-sm rounded-lg focus:ring-blue-500 focus:outline-none block w-full pl-10 p-2"
               placeholder="Search..."
             />
           </div>

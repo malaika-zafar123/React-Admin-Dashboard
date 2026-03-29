@@ -13,13 +13,13 @@ export default function ProductPage() {
   const [modalOpen, setModalOpen] = useState(false);
   const [editId, setEditId] = useState(null);
 
-  // 🔥 LOAD FROM LOCAL STORAGE
+  //  LOAD FROM LOCAL STORAGE
   useEffect(() => {
     const saved = JSON.parse(localStorage.getItem("products"));
     if (saved) setProducts(saved);
   }, []);
 
-  // 🔥 SAVE TO LOCAL STORAGE
+  //  SAVE TO LOCAL STORAGE
   useEffect(() => {
     localStorage.setItem("products", JSON.stringify(products));
   }, [products]);

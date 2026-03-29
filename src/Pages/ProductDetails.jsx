@@ -4,9 +4,20 @@ export default function ProductDetails() {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
+    // 1. API data
     fetch("https://dummyjson.com/products?limit=12")
       .then((res) => res.json())
-      .then((data) => setProducts(data.products))
+      .then((data) => {
+        
+        // 2. localStorage data
+        const localData =
+          JSON.parse(localStorage.getItem("products")) || [];
+
+        // 3. Merge both
+        const merged = [...localData, ...data.products];
+
+        setProducts(merged);
+      })
       .catch((err) => console.error(err));
   }, []);
 
@@ -17,7 +28,7 @@ export default function ProductDetails() {
         Product Details
       </h1>
 
-      {/* GRID CARDS */}
+      {/* SAME GRID UI */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
 
         {products.map((p) => (
@@ -25,40 +36,34 @@ export default function ProductDetails() {
             key={p.id}
             className="bg-white dark:bg-[#1e293b] rounded-xl shadow-md p-4 hover:scale-105 transition"
           >
-            {/* Image */}
             <img
-              src={p.thumbnail}
+              src={p.thumbnail || "https://via.placeholder.com/150"}
               alt={p.title}
-              className="w-full h-40 object-cover rounded-lg mb-3"
+              className="w-full h-40 object-cover bg-amber-50 rounded-lg mb-3"
             />
 
-            {/* Title */}
             <h2 className="text-lg font-semibold text-gray-900 dark:text-white">
               {p.title}
             </h2>
 
-            {/* Brand */}
             <p className="text-sm text-gray-500 dark:text-gray-400">
               {p.brand}
             </p>
 
-            {/* Rating */}
             <div className="flex items-center my-2">
               {Array.from({ length: 5 }, (_, i) => (
                 <span key={i} className="text-yellow-400">
-                  {i < Math.round(p.rating) ? "★" : "☆"}
+                  {i < Math.round(p.rating || 0) ? "★" : "☆"}
                 </span>
               ))}
             </div>
 
-            {/* Price */}
             <p className="text-[#22c55e] font-bold text-lg">
               ${p.price}
             </p>
 
-            {/* Description */}
             <p className="text-sm text-gray-600 dark:text-gray-300 mt-2">
-              {p.description.length > 60
+              {p.description?.length > 60
                 ? p.description.slice(0, 60) + "..."
                 : p.description}
             </p>

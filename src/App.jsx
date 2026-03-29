@@ -5,7 +5,7 @@ import Dashboard from "./Component/Dashboard";
 import LinePage from "./Chart/LinePage";
 import BarPage from "./Chart/BarPage";
 import PiePage from "./Chart/PiePage";
-import Calendar from "./Pages/Calendar";
+import AddProduct from "./Pages/AddProduct"
 import ContactForm from "./Pages/ContactForm";
 import ProductLogic from "./Pages/ProductLogic";
 import { ThemeProvider } from "./Theme/ThemeContext";
@@ -29,7 +29,7 @@ function App() {
               <Route path="/line" element={<LinePage />} />
               <Route path="/bar" element={<BarPage />} />
               <Route path="/pie" element={<PiePage />} />
-              <Route path="/calendar" element={<Calendar />} />
+               <Route path="/add" element={<AddProduct />} />
               <Route path="/contact" element={<ContactForm />} />
               <Route path="/product" element={<ProductLogic />} />
               <Route path="/details" element={<ProductDetails />} />

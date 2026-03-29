@@ -2,12 +2,12 @@ import React from "react";
 import { PieChart, Pie, Cell, Tooltip } from "recharts";
 import { dataPie } from "../assets/ChartData";
 
-const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
+const COLORS = ["#0088FE", "#359078", "#FFBB28", "#FF8042"];
 
 function PiePage() {
   return (
-    <div className="p-6">
-      <h1 className="text-xl font-bold mb-4">Pie Chart</h1>
+    <div className=" p-8 dark:bg-gray-900 ">
+      <h1 className="text-xl dark:text-gray-100 font-bold mb-4">Pie Chart</h1>
 
       {/* Chart */}
       <PieChart width={400} height={300}>
@@ -27,16 +27,17 @@ function PiePage() {
       </PieChart>
 
       {/* Information Section */}
-      <div className="mt-6 p-4 bg-gray-100 rounded">
-        <h2 className="font-semibold mb-2">About this chart:</h2>
-        <p>
+        <h2 className="font-semibold dark:bg-gray-900  dark:text-gray-100 mb-2">About this chart:</h2>
+      <div className="mt-6 p-4 dark:bg-gray-900  bg-gray-100 rounded">
+        <h2 className="font-semibold dark:text-gray-100 mb-2">About this chart:</h2>
+        <p className="dark:text-gray-100">
           The pie chart shows the proportion of each group in the total. Each slice
           represents a group's contribution as a percentage.
         </p>
 
         {/* Group / Category List */}
-        <h3 className="font-semibold mt-4 mb-2">Groups:</h3>
-        <ul className="list-disc list-inside">
+        <h3 className="font-semibold dark:text-gray-100 mt-4 mb-2">Groups:</h3>
+        <ul className="list-disc dark:text-gray-100 list-inside">
           {dataPie.map((item, index) => (
             <li key={index} style={{ color: COLORS[index % COLORS.length] }}>
               {item.name} — {item.value}%
