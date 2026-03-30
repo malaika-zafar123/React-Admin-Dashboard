@@ -11,17 +11,16 @@ import ProductLogic from "./Pages/ProductLogic";
 import { ThemeProvider } from "./Theme/ThemeContext";
 import ProductDetails from "./Pages/ProductDetails";
 import ReviewPage from "./Pages/ReviewPage";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 function App() {
   return (
     <ThemeProvider>
 
       <Router>
-        <div className="flex">
+        <div className="flex min-h-screen">
           <Sidebar />
 
-          <div className="w-full">
+          <div className="w-full min-h-screen dark:bg-gray-900">
             <Navbar />
 
             <Routes>

@@ -56,7 +56,7 @@ export default function AddProduct() {
   };
 
   return (
-    <div className="  bg-white dark:bg-gray-900 p-8">
+    <div className="w-full min-h-screen dark:bg-gray-900 p-8">
       <h2 className="text-2xl mb-4 dark:text-white">
         {editId ? "Edit Product" : "Add Product"}
       </h2>
