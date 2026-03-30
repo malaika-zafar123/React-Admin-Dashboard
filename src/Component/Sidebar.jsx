@@ -36,7 +36,7 @@ function Sidebar() {
         {/* Profile */}
         <div className="flex p-4 flex-col items-center">
           <img
-            className="h-20 w-20 rounded-full"
+            className="h-20 w-20 rounded-full object-cover"
             src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e"
             alt="Profile"
           />
@@ -71,12 +71,6 @@ function Sidebar() {
             className=" flex items-center dark:text-gray-200 px-2 py-2 rounded-md    hover:text-blue-300"
           ><FontAwesomeIcon icon={faList}  className="mr-3" /> Product Details
           </Link>
-          <Link
-            to="/reviews"
-            className=" flex items-center dark:text-gray-200 px-2 py-2 rounded-md    hover:text-blue-300"
-          >
-            <FontAwesomeIcon icon={faFolder} className="mr-3" /> User Review
-          </Link>
 
           {/* Pages */}
           <h3 className="px-3 text-xs dark:text-gray-100 font-semibold uppercase mt-5">
@@ -84,11 +78,12 @@ function Sidebar() {
           </h3>
 
           <Link
-            to="/add"
+            to="/reviews"
             className=" flex items-center dark:text-gray-200 px-2 py-2 rounded-md    hover:text-blue-300"
           >
-            <FontAwesomeIcon icon={faCalendar} className="mr-3" /> Add Product
+            <FontAwesomeIcon icon={faFolder} className="mr-3" /> User Review
           </Link>
+         
 
           <Link
             to="/contact"

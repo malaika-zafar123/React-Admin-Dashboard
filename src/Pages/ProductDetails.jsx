@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
-
+import { useNavigate } from "react-router-dom";
 export default function ProductDetails() {
   const [products, setProducts] = useState([]);
-
+  const navigate = useNavigate();
   useEffect(() => {
     // 1. API data
     fetch("https://dummyjson.com/products?limit=12")
       .then((res) => res.json())
       .then((data) => {
-        
+
         // 2. localStorage data
         const localData =
           JSON.parse(localStorage.getItem("products")) || [];
@@ -27,7 +27,12 @@ export default function ProductDetails() {
       <h1 className="text-3xl font-bold mb-6 text-gray-900 dark:text-white">
         Product Details
       </h1>
-
+      <button
+        className="bg-[#359078] text-white px-3 py-1 mb-4 rounded"
+        onClick={() => navigate("/product")}
+      >
+        Back
+      </button>
       {/* SAME GRID UI */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
 

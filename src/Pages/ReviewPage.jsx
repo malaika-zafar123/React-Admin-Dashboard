@@ -34,7 +34,7 @@ export default function ReviewPage() {
     comment: "",
   });
 
-  // ✅ Load from localStorage (permanent)
+  //  Load from localStorage (permanent)
   useEffect(() => {
     try {
       const saved = JSON.parse(localStorage.getItem("reviews"));
@@ -50,7 +50,7 @@ export default function ReviewPage() {
     }
   }, []);
 
-  // ✅ Save to localStorage whenever reviews change
+  // Save to localStorage whenever reviews change
   useEffect(() => {
     if (reviews.length > 0) {
       localStorage.setItem("reviews", JSON.stringify(reviews));
@@ -87,7 +87,7 @@ export default function ReviewPage() {
     });
   };
 
-  // Delete review (bonus feature 🔥)
+  // Delete review
   const handleDelete = (id) => {
     const updated = reviews.filter((r) => r.id !== id);
     setReviews(updated);

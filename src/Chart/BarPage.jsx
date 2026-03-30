@@ -38,7 +38,8 @@ function BarPage() {
           About this chart:
         </h2>
         <p className="dark:text-gray-100">
-          The bar chart shows the comparison of different categories.
+           This bar chart shows the stock quantity of each product. 
+          It helps to compare which products have higher or lower stock availability.
         </p>
 
         <h3 className="font-semibold dark:text-gray-100 mt-4 mb-2">
