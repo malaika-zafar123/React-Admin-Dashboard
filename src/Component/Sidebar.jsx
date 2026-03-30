@@ -23,8 +23,8 @@ function Sidebar() {
             {/* Toggle Button */}
         <button
           onClick={() => setToggleMenu(!toggleMenu)}
-          className={`absolute top-9 ${toggleMenu ? "left-6" : "left-56"
-            } z-10 dark:text-gray-400 transition-all duration-500`}
+          className={`absolute top-14 ${toggleMenu ? "left-6" : "left-56"
+            } z-10 dark:text-gray-400 border-gray-50 rounded-md transition-all duration-500`}
         >
           <FontAwesomeIcon icon={faBars} />
         </button>

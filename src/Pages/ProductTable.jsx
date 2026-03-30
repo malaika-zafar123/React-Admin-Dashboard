@@ -173,12 +173,12 @@ export default function ProductTable({ search, setSearch }) {
       {/* MODAL */}
       {modalOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-          <div className="bg-white p-6 rounded-lg w-[400px]">
+          <div className="bg-white p-6 dark:bg-gray-900 dark:text-gray-100 rounded-lg w-[400px]">
             <h2 className="text-xl font-bold mb-4">
               {editId ? "Edit Product" : "Add Product"}
             </h2>
 
-            <form onSubmit={handleSubmit} className="flex flex-col gap-3">
+            <form onSubmit={handleSubmit} className="flex dark:text-white flex-col gap-3">
               <input id="title" value={formData.title} onChange={handleChange} placeholder="Title" className="border p-2 rounded" required />
               <input id="price" value={formData.price} onChange={handleChange} placeholder="Price" className="border p-2 rounded" />
               <input id="brand" value={formData.brand} onChange={handleChange} placeholder="Brand" className="border p-2 rounded" />
@@ -190,7 +190,7 @@ export default function ProductTable({ search, setSearch }) {
                 <button
                   type="button"
                   onClick={() => setModalOpen(false)}
-                  className="bg-gray-300 px-3 py-1 rounded"
+                  className="bg-gray-300 dark:bg-gray-500 px-3 py-1 rounded"
                 >
                   Cancel
                 </button>
