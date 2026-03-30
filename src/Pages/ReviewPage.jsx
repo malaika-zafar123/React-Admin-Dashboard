@@ -151,11 +151,11 @@ export default function ReviewPage() {
       </form>
 
       {/* REVIEWS LIST */}
-      <div className="space-y-4 max-h-[500] overflow-y-auto">
+      <div className=" max-h-[500] gap-2 ">
         {reviews.map((r) => (
           <div
             key={r.id}
-            className="bg-white dark:bg-[#1e293b] p-4 rounded-2xl shadow hover:shadow-lg transition"
+            className="bg-white dark:bg-[#1e293b] p-4 m-3 rounded-2xl shadow hover:shadow-lg transition"
           >
             <h3 className="font-bold text-gray-900 dark:text-white">
               {r.productName}

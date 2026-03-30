@@ -20,7 +20,7 @@ function App() {
         <div className="flex min-h-screen">
           <Sidebar />
 
-          <div className="w-full min-h-screen dark:bg-gray-900">
+          <div className="w-full min-h-screen bg-gray-100 dark:bg-gray-900">
             <Navbar />
 
             <Routes>
